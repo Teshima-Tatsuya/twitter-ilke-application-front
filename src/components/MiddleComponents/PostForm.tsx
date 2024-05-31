@@ -31,26 +31,17 @@ const Content = styled.div`
 
 const BottomDiv = styled.div`
   width: 518px;
-  height: 32px;
+  height: 48px;
   font-size: 15px;
-  display: flex;
-  align-items: end;
+  vertical-align: middle;
 `
 
-type PostProps = {
-  content: string;
-  username: string;
-  timestamp: string;
-}
-
-const Post: React.FC<PostProps> = (props) => {
-  const { content, username, timestamp } = props;
+const Post: React.FC = (props) => {
   return (
     <Wrapper>
       <IconDiv><img src="https://placehold.jp/3d4070/ffffff/40x40.png"></img></IconDiv>
       <ContentDiv>
-        <HeaderDiv>{username} @username - { timestamp }</HeaderDiv>
-        <Content>{content}</Content>
+        <Content>ポストを投稿</Content>
         <BottomDiv>C:10 RP:10 L:100 S:10000</BottomDiv>
       </ContentDiv>
     </Wrapper>
