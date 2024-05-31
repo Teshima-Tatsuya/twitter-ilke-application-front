@@ -15,7 +15,7 @@ const MiddleColumn: React.FC = (props) => {
   return (
     <Column>
       <PostForm />
-      <Post content="タイムライン" username="testuser" timestamp="2024/1/1 10:00:00" />
+      <Post content="タイムラインtest" username="testuser" timestamp="2024/1/1 10:00:00" />
       <Post content="タイムライン" username="testuser" timestamp="2024/1/1 10:00:00" />
       <Post content="タイムライン" username="testuser" timestamp="2024/1/1 10:00:00" />
       <Post content="タイムライン" username="testuser" timestamp="2024/1/1 10:00:00" />

@@ -34,6 +34,34 @@ const BottomDiv = styled.div`
   height: 48px;
   font-size: 15px;
   vertical-align: middle;
+  display: flex;
+  align-items: end;
+`
+
+const StatDiv = styled.div`
+  width: 401px;
+  padding: 2px;
+  height: 36px;
+`
+
+const PostButton = styled.button`
+  min-width: 36px;
+  min-height: 36px;
+  margin-top: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-bottom-left-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  background-color: rgb(29, 155, 240);
+  border-color: rgba(0, 0, 0, 0);
+`
+
+const PostButtonText = styled.span`
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 700;
 `
 
 const Post: React.FC = (props) => {
@@ -42,7 +70,10 @@ const Post: React.FC = (props) => {
       <IconDiv><img src="https://placehold.jp/3d4070/ffffff/40x40.png"></img></IconDiv>
       <ContentDiv>
         <Content>ポストを投稿</Content>
-        <BottomDiv>C:10 RP:10 L:100 S:10000</BottomDiv>
+        <form action="">
+          <textarea rows={5} cols={70}></textarea>
+          <BottomDiv><StatDiv></StatDiv><PostButton><PostButtonText>ポストする</PostButtonText></PostButton></BottomDiv>
+        </form>
       </ContentDiv>
     </Wrapper>
   );
