@@ -19,8 +19,7 @@ const Item = styled.div`
 const RightColumn: React.FC = (props) => {
   return (
     <Column>
-      <Item><a href="">ホーム</a></Item>
-      <Item><a href="">プロフィール</a></Item>
+      <Item>何かの広告</Item>
     </Column>
   );
 };
