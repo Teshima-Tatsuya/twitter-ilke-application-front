@@ -8,7 +8,6 @@ const Column = styled.div`
   align-items: flex-start;
   flex-direction: column;
   margin: 0 auto;
-  border: 0.1em solid;
 `
 
 const MiddleColumn: React.FC = (props) => {
