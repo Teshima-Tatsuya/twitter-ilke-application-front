@@ -24,6 +24,8 @@ const ContentDiv = styled.div`
 const HeaderDiv = styled.div`
   width: 518px;
   height: 21px;
+  display: flex;
+  justify-content: space-between;
 `
 const Content = styled.div`
   font-size: 15px;
@@ -45,13 +47,19 @@ type PostProps = {
 
 const Post: React.FC<PostProps> = (props) => {
   const { content, username, timestamp } = props;
+  const now = new Date();
+  const timestamp_date = new Date(timestamp);
+  const ago = Math.trunc((now.getTime() - timestamp_date.getTime()) / 1000);
+  const ago_str = (ago < 60) ? ago + "秒前" : (ago < 3600) ? Math.trunc(ago / 60) + "分前" : (ago < 86400) ? Math.trunc(ago / 3600) + "時間前" : Math.trunc(ago / 86400) + "日前"
   return (
     <Wrapper>
-      <IconDiv><img src="https://placehold.jp/3d4070/ffffff/40x40.png"></img></IconDiv>
+      <IconDiv><img src={"https://placehold.jp/24/ffffff/000000/40x40.png?text=" + username}></img></IconDiv>
       <ContentDiv>
-        <HeaderDiv>{username} @username - { timestamp }</HeaderDiv>
+        <HeaderDiv>
+          <div>{username}</div>
+          <div>{ago_str}</div>
+        </HeaderDiv>
         <Content>{content}</Content>
-        <BottomDiv>C:10 RP:10 L:100 S:10000</BottomDiv>
       </ContentDiv>
     </Wrapper>
   );
