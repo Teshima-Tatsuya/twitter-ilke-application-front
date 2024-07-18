@@ -13,6 +13,7 @@ const Logon = () => {
     try {
       const response = await axios.post('http://localhost:8080/api/v1/users', { user: { name, email, password, password_confirmation } });
       localStorage.setItem('token', response.data.token);
+      window.location.reload()
     } catch (error) {
       console.error('Logon failed', error);
     }

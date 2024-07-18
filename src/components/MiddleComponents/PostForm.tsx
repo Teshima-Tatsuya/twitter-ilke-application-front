@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useForm, SubmitHandler } from 'react-hook-form';
 import api from "../../api/axios"
-import { useUser } from "../../hooks/usrUser";
+import { useUser } from "../../hooks/useUser";
 
 const Wrapper = styled.div`
   width: 566px;
