@@ -74,7 +74,7 @@ interface FormInput {
 
 const Post: React.FC = () => {
   const { user } = useUser();
-  const { register, handleSubmit, formState: { errors }, watch } = useForm<FormInput>();
+  const { register, handleSubmit, formState: { errors }, watch, reset } = useForm<FormInput>();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -88,6 +88,7 @@ const Post: React.FC = () => {
     try {
       const response = await api.post('/posts', data);
       console.log('Create Post', response.data);
+      reset();
     } catch (error) {
       setSubmitError('An unexpected error occurred.');
     } finally {

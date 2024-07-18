@@ -12,23 +12,25 @@ const Wrapper = styled.div`
 
 
 const IconDiv = styled.div`
-  width: 40px;
+  width: 100px;
   margin-right: 8px;
 `
 
 const ContentDiv = styled.div`
-  width: 518px;
+  width: 458px;
   padding-bottom: 12px;
 `
 
 const HeaderDiv = styled.div`
-  width: 518px;
+  width: 458px;
   height: 21px;
+  font-size: 16px;
   display: flex;
   justify-content: space-between;
 `
 const Content = styled.div`
-  font-size: 15px;
+  padding-top: 10px;
+  font-size: 20px;
 `
 
 const BottomDiv = styled.div`
@@ -53,7 +55,7 @@ const Post: React.FC<PostProps> = (props) => {
   const ago_str = (ago < 60) ? ago + "秒前" : (ago < 3600) ? Math.trunc(ago / 60) + "分前" : (ago < 86400) ? Math.trunc(ago / 3600) + "時間前" : Math.trunc(ago / 86400) + "日前"
   return (
     <Wrapper>
-      <IconDiv><img src={"https://placehold.jp/24/ffffff/000000/40x40.png?text=" + username}></img></IconDiv>
+      <IconDiv><img src={"https://placehold.jp/24/ffffff/000000/100x100.png?text=" + username + "&css=%7B%22border%22%3A%22%20solid%22%7D"}></img></IconDiv>
       <ContentDiv>
         <HeaderDiv>
           <div>{username}</div>
