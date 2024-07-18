@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import PostForm from "./MiddleComponents/PostForm"
-import Post from "./MiddleComponents/Post"
+import Timeline from "./MiddleComponents/Timeline"
 
 const Column = styled.div`
   max-width: 598px;
@@ -15,10 +15,7 @@ const MiddleColumn: React.FC = (props) => {
   return (
     <Column>
       <PostForm />
-      <Post content="タイムラインtest" username="testuser" timestamp="2024/1/1 10:00:00" />
-      <Post content="タイムライン" username="testuser" timestamp="2024/1/1 10:00:00" />
-      <Post content="タイムライン" username="testuser" timestamp="2024/1/1 10:00:00" />
-      <Post content="タイムライン" username="testuser" timestamp="2024/1/1 10:00:00" />
+      <Timeline />
     </Column>
   );
 };

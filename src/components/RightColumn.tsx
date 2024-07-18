@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Logon from "./RightComponents/Logon"
+import Login from "./RightComponents/Login"
+import UserProfile from "./RightComponents/UserProfile"
 
 const Column = styled.div`
   width: 350px;
@@ -16,10 +19,19 @@ const Item = styled.div`
   font-size: 15px;
 `
 
+const HR = styled.hr`
+  margin-bottom: 100px;
+  margin-top: 100px;
+`
+
 const RightColumn: React.FC = (props) => {
   return (
     <Column>
-      <Item>何かの広告</Item>
+      <Logon />
+      <HR />
+      <Login />
+      <HR />
+      <UserProfile />
     </Column>
   );
 };
