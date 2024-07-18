@@ -5,6 +5,7 @@ import Post from "./Post"
 import axios from "axios";
 
 interface Post {
+  id: number;
   user: string;
   content: string;
   created_at: string;
@@ -33,7 +34,7 @@ const Timeline: React.FC = (props) => {
   return (
     <>
       {posts.map(post => (
-        <Post content={post.content} username={post.user} timestamp={post.created_at} />
+        <Post content={post.content} username={post.user} timestamp={post.created_at} key={post.id} />
       ))}
     </>
   );

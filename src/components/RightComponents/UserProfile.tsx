@@ -1,12 +1,5 @@
-import React, {useEffect, useState} from "react";
-import styled from "styled-components";
-import api from "../../api/axios"
+import React from "react";
 import { useUser } from "../../hooks/usrUser";
-
-interface Profile {
-  name: string
-  email: string
-}
 
 const UserProfile: React.FC = () => {
   const { user, loading, error } = useUser();

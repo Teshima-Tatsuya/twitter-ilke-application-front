@@ -12,7 +12,7 @@ const Login = () => {
     try {
       const response = await axios.post('http://localhost:8080/api/v1/login', { email, password });
       localStorage.setItem('token', response.data.token);
-      navigate('/dashboard');
+      console.info('Login success');
     } catch (error) {
       console.error('Login failed', error);
     }
