@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Post from "./Post"
-import axios from "axios";
+import api from "../../api/axios"
 
 interface Post {
   id: number;
@@ -32,7 +32,7 @@ const Timeline: React.FC<TimelineProps> = (props) => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get<Post[]>('http://localhost:8080/api/v1/posts/' + type);
+      const response = await api.get<Post[]>('/posts/' + type);
       setPosts(response.data);
       setLoading(false);
     } catch (err) {
