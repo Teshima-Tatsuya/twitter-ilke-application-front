@@ -12,7 +12,12 @@ interface Post {
   created_at: string;
 }
 
-const Timeline: React.FC = (props) => {
+interface TimelineProps {
+  type: "all" | "following"
+}
+
+const Timeline: React.FC<TimelineProps> = (props) => {
+  const { type } = props;
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -27,7 +32,7 @@ const Timeline: React.FC = (props) => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get<Post[]>('http://localhost:8080/api/v1/posts');
+      const response = await axios.get<Post[]>('http://localhost:8080/api/v1/posts/' + type);
       setPosts(response.data);
       setLoading(false);
     } catch (err) {
