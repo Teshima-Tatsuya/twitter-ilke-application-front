@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../api/axios';
 import { useNavigate } from 'react-router-dom';
 
 const Logon = () => {
@@ -11,7 +11,7 @@ const Logon = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/users', { user: { name, email, password, password_confirmation } });
+      const response = await api.post('/users', { user: { name, email, password, password_confirmation } });
       localStorage.setItem('token', response.data.token);
       window.location.reload()
     } catch (error) {

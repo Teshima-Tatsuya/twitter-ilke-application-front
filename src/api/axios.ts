@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:8080/api/v1'; // Rails APIのURL
+const API_URL = process.env.REACT_APP_BASE_URL + '/api/v1'; // Rails APIのURL
 
 const api = axios.create({
   baseURL: API_URL,
