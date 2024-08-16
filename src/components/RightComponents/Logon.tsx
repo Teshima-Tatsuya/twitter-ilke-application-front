@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import api from '../../api/axios';
-import { useNavigate } from 'react-router-dom';
 
 const Logon = () => {
   const [name, setName] = useState('');
